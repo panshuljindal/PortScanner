@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static\css\index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="static\js\index.js" type="text/javascript"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>IP Scanner</title>
+</head>
+<body>
+    <div id="navbar">
+        <ul class="sidenav sidenav-fixed">
+            <li>
+                <div class="user-view">
+                    <div class="background" style="background-color:  #3b6978;">
+                        <!-- <img src="images/office.jpg"> -->
+                    </div>
+                    <!-- <a href="#user"><img class="circle" src=""></a> -->
+                    <a href="/ipscanner"><span class="white-text name" style="padding-bottom: 5%;" class="navtitle">IP
+                            Scanner<br></span></a>
+                </div>
+            </li>
+            <li><a href="/">Port Scanner</a></li>
+            <li><a href="/dns">DNS Scan</a></li>
+        </ul>
+
+        <script type="text/javascript" src="static/js/materialize.min.js"></script>
+    </div>
+
+    <div id="showpage">
+        <span id="showtitle">IP Scanner</span>
+        <div id="line"></div>
+        <div id="form">
+            <div class="row">
+                <form class="col s12" action="/ipscannerInput" method="POST">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="host" name="host" type="text" class="validate" placeholder="For eg: google.com">
+                            <label for="host" style="color: black;font-size: 20px;">IP Address to Scan</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Enter the IP Address you want
+                                to search for</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- <a id="scan-port-button" class="lighten-3 btn-flat" onclick="scanPort()">Scan Now</a> -->
+                        <input type="submit" value="Scan Now" id="scan-port-button" class="lighten-3 btn-flat">
+                    </div>
+                </form>
+                <h5>Scanning {{ ipAddress }} :</h5>
+                <table class="highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <div>
+                        <tbody >
+                            <div>
+                            {% for ipAdd in addrDict %}
+                            <tr>
+                                <td>{{ ipAdd }} </td>
+                               
+                            </tr>
+                            {% endfor %}
+                            </div>>
+                        </tbody>
+                    </div>
+                </table>
+                <h5>Scanning completed in {{ total }} time.</h5>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
