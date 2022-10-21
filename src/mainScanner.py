@@ -7,7 +7,7 @@ import json
 import os
 import threading
 import builtins
-from multi.scanner_thread import split_processing
+from scanner_thread import split_processing
 import logging
 from flask import Flask, render_template, request, redirect, url_for
 

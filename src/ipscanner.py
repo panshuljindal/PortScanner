@@ -3,7 +3,7 @@ from datetime import datetime
 import json
 import os
 
-from multi.scanner_thread import split_processing
+from scanner_thread import split_processing
 
 # Ask for input
 def ipAddresScan(net1):
