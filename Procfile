@@ -1,1 +1,1 @@
-web: python src/mainScanner.py
+web: python manage.py
