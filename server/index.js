@@ -15,7 +15,7 @@ let countOfPorts = config.count, // total number of ports to open
 // generating the ports
 let ports = new Set(); // using set because ports can't be duplicate
 
-while(ports.size != countOfPorts) { // adding the required number of ports
+while (ports.size != countOfPorts) { // adding the required number of ports
     ports.add(randNumGenerator(low, high));
 }
 
@@ -24,8 +24,8 @@ console.log(`Starting server at ${countOfPorts} different ports....`);
 let portsArray = [...ports];
 
 for (let index = 0; index < portsArray.length; index++) {
-    
+
     express().listen(portsArray[index], () => {
-        console.log('\n.......Started a server........\n');
+        // console.log('\n.......Started a server........\n');
     });
 }
