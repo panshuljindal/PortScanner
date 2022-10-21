@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,6 +21,7 @@
 
     <title>IP Scanner</title>
 </head>
+
 <body>
     <div id="navbar">
         <ul class="sidenav sidenav-fixed">
@@ -48,9 +50,10 @@
                 <form class="col s12" action="/ipscannerInput" method="POST">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="host" name="host" type="text" class="validate" placeholder="For eg: google.com">
+                            <input id="host" name="host" type="text" class="validate" placeholder="For eg: 127.0.0.0">
                             <label for="host" style="color: black;font-size: 20px;">IP Address to Scan</label>
-                            <span class="helper-text" data-error="wrong" data-success="right">Enter the IP Address you want
+                            <span class="helper-text" data-error="wrong" data-success="right">Enter the IP Address you
+                                want
                                 to search for</span>
                         </div>
                     </div>
@@ -68,14 +71,14 @@
                         </tr>
                     </thead>
                     <div>
-                        <tbody >
+                        <tbody>
                             <div>
-                            {% for ipAdd in addrDict %}
-                            <tr>
-                                <td>{{ ipAdd }} </td>
-                               
-                            </tr>
-                            {% endfor %}
+                                {% for ipAdd in addrDict %}
+                                <tr>
+                                    <td>{{ ipAdd }} </td>
+
+                                </tr>
+                                {% endfor %}
                             </div>>
                         </tbody>
                     </div>
@@ -86,4 +89,5 @@
     </div>
 
 </body>
+
 </html>
