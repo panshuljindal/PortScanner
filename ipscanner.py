@@ -30,7 +30,7 @@ def ipAddresScan(net1):
     td1 = datetime.now()
 
     try:
-        with open(get_absolute_path('../config.json')) as config_file:
+        with open(get_absolute_path('config.json')) as config_file:
             config = json.load(config_file)
             # print get_absolute_path('../config.json')
         range_low = int(config['ipRange']['low'])
